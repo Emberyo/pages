@@ -26,7 +26,6 @@
       const q = params.get("q"); // "hello"
       const forofor = "/404.md";
 
-
       let fetsh = await fetch(q);
       if (!fetsh.ok || fetsh.headers.get("content-type")?.includes("text/html")) {
         fetsh = await fetch(forofor);
