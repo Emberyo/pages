@@ -20,34 +20,36 @@
 <body>
   <md-block id="mdown"></md-block>
   <script>
-    (async () => {
-      const params = new URLSearchParams(window.location.search);
-      const q = params.get("q");
-      const fallback = "/404";
-
-      let response;
-      try {
-        response = q;
-        if (!response.ok || response.headers.get("content-type")?.includes("text/html")) {
-          throw new Error("Invalid content");
-        }
-      } catch {
-        response = fallback;
+  (async () => {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get("q");
+    const fallback = "/404.md";
+  
+    let url = q + ".md";
+  
+    // Check if the file exists
+    try {
+      const test = await fetch(url);
+      if (!test.ok || test.headers.get("content-type")?.includes("text/html")) {
+        url = fallback;
       }
-
-      response = response+".md"
-
-      const mdown = document.getElementById("mdown");
-      mdown.setAttribute("src",response);
-
-      // --- Extract first heading for title ---
-      const headingMatch = mdown.match(/^#\s+(.+)/m);
-      if (headingMatch) {
-        document.title = headingMatch[1].trim();
-      } else {
-        document.title = "Emberyo Website";
-      }
-    })();
+    } catch {
+      url = fallback;
+    }
+  
+    // Set src for md-block
+    const mdown = document.getElementById("mdown");
+    mdown.setAttribute("src", url);
+  
+    // Fetch the markdown to extract the first heading
+    try {
+      const res = await fetch(url).then(r => r.text());
+      const headingMatch = res.match(/^#\s+(.+)/m);
+      document.title = headingMatch ? headingMatch[1].trim() : "Emberyo Website";
+    } catch {
+      document.title = "Emberyo Website";
+    }
+  })();
   </script>
 </body>
 </html>
