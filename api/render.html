@@ -27,21 +27,19 @@
 
       let response;
       try {
-        response = await fetch(q);
+        response = q;
         if (!response.ok || response.headers.get("content-type")?.includes("text/html")) {
           throw new Error("Invalid content");
         }
       } catch {
-        response = await fetch(fallback);
+        response = fallback;
       }
 
-      const res = await response.text();
       const mdown = document.getElementById("mdown");
-      mdown.removeAttribute("rendered");
-      mdown.textContent = res;
+      mdown.setAttribute("src",response);
 
       // --- Extract first heading for title ---
-      const headingMatch = res.match(/^#\s+(.+)/m);
+      const headingMatch = mdown.match(/^#\s+(.+)/m);
       if (headingMatch) {
         document.title = headingMatch[1].trim();
       } else {
