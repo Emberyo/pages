@@ -31,7 +31,7 @@
         fetsh = await fetch(forofor);
       }
       let res = await fetsh.text();
-      document.getElementById("mdown").removeAttribute("rendered");
+      await document.getElementById("mdown").removeAttribute("rendered");
       document.getElementById("mdown").textContent = res;
 
       document.title = "Emberyo Website";
