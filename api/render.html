@@ -8,13 +8,14 @@
   <style>
     @font-face {
         font-family: "CommitMono";
-        src: url("/fonts/CommitMonoNerdFont-Regular.otf") format("otf");
+        src: url("/fonts/CommitMonoNerdFont-Regular.otf") format("opentype");
     }
 
     * {
       font-family: "CommitMono"
     }
   </style>
+  <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 </head>
 <body>
   <md-block id="mdown"></md-block>
@@ -36,10 +37,6 @@
       document.getElementById("mdown").innerHTML = res;
 
       document.title = "Emberyo Website";
-      const elem = document.createElement("script");
-      elem.src = "https://md-block.verou.me/md-block.js";
-      elem.type = "module";
-      document.body.appendChild(elem);
     })()
   </script>
 </body>
