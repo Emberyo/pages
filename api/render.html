@@ -20,19 +20,18 @@
 <body>
   <md-block id="mdown"></md-block>
   <script>
+    const contnt = document.textContent;
     (async () =>  {
       const params = new URLSearchParams(window.location.search);
       const q = params.get("q"); // "hello"
-      const forofor = "/404.md"
+      const forofor = "/404.md";
 
 
       const fetsh = await fetch(q);
-      let res;
-      if (!fetsh.ok) {
+      let res = await fetsh.text();;
+      if (res === contnt) {
         const fetsh2 = await fetch(forofor);
         res = await fetsh2.text();
-      } else {
-        res = await fetsh.text();
       }
       document.getElementById("mdown").textContent = res;
 
