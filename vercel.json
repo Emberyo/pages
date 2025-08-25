@@ -2,8 +2,12 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
-      "source": "/:path((?!404\\.md$).*)",
-      "destination": "/api/render.html?q=:path"
+      "source": "/404.md",
+      "destination": "/404.md"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/api/render.html?q=:path*"
     }
   ]
 }
