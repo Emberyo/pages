@@ -27,12 +27,11 @@
       const forofor = "/404.md";
 
 
-      const fetsh = await fetch(q);
-      let res = await fetsh.text();;
-      if (res === contnt) {
-        const fetsh2 = await fetch(forofor);
-        res = await fetsh2.text();
+      let fetsh = await fetch(q);
+      if (!fetsh.ok || fetsh.headers.get("content-type")?.includes("text/html")) {
+        fetsh = await fetch(forofor);
       }
+      let res = await fetsh.text();
       document.getElementById("mdown").textContent = res;
 
       document.title = "Emberyo Website";
