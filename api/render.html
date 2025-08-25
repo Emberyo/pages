@@ -22,12 +22,12 @@
     (async () =>  {
       const params = new URLSearchParams(window.location.search);
       const q = params.get("q"); // "hello"
-      
-      
+
+
       const fetsh = await fetch(q);
-      const res = fetsh.text();
+      const res = await fetsh.text();
       document.getElementById("mdown").innerHTML = res;
-      
+
       document.title = fnm;
       const elem = document.createElement("script");
       elem.src = "https://md-block.verou.me/md-block.js";
