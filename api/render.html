@@ -29,7 +29,8 @@
       const fetsh = await fetch(q);
       let res;
       if (!fetsh.ok) {
-        window.location.pathname = "/404.md";
+        const fetsh2 = await fetch(forofor);
+        res = await fetsh2.text();
       } else {
         res = await fetsh.text();
       }
