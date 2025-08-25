@@ -22,10 +22,17 @@
     (async () =>  {
       const params = new URLSearchParams(window.location.search);
       const q = params.get("q"); // "hello"
+      const forofor = "/404.md"
 
 
       const fetsh = await fetch(q);
-      const res = await fetsh.text();
+      let res;
+      if (!fetsh.ok) {
+        const fetsh2 = await fetch(forofor);
+        res = await fetsh2.text();
+      } else {
+        res = await fetsh.text();
+      }
       document.getElementById("mdown").innerHTML = res;
 
       document.title = fnm;
