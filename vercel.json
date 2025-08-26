@@ -6,8 +6,8 @@
       "destination": "/:file*.md"
     },
     {
-      "source": "/:path*",
-      "destination": "/api/render.html?q=:path*"
+      "source": "/:path((?!.*\\.md).*)",
+      "destination": "/api/render.html?q=:path"
     }
   ]
 }
