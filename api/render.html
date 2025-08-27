@@ -21,11 +21,10 @@
   <md-block id="mdown"></md-block>
   <script>
   (async () => {
-    const params = new URLSearchParams(window.location.search);
-    const q = params.get("q");
+    const path = window.location.pathname.slice(1) || "README";
     const fallback = "/404.md";
   
-    let url = q + ".md";
+    let url = path + ".md";
   
     // Check if the file exists
     try {
