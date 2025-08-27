@@ -11,14 +11,42 @@
         src: url("/fonts/CommitMonoNerdFont-Regular.otf") format("opentype");
     }
 
+    @font-face {
+        font-family: "OpenDyslexic";
+        src: url("/fonts/OpenDyslexic-Regular.woff") format("woff");
+    }
+
     * {
       font-family: "CommitMono";
+    }
+
+    .dyslexic {
+      font-family: "OpenDyslexic";
+    }
+
+    .dysbtn {
+      position:absolute;
+      text-decoration: none;
+      display: inline-block;
+      margin: 1%;
+      background-color: #e5e5e5;
+      border-radius: 10px;
+      padding: 0.5%;
+      transition: all 0.3s ease;
+      top:1%;
+      right:1%;
+    }
+    .dysbtn:hover {
+      background-color: #979797;
+      transform: scale(1.25);
+      transition: all 0.3s ease;
     }
   </style>
   <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 </head>
 <body>
   <md-block id="mdown"></md-block>
+  <a href="javascript:toggleDyslexia()" class="dysbtn"></a>
   <script>
   (async () => {
     const path = window.location.pathname.slice(1) || "README";
@@ -49,6 +77,10 @@
       document.title = "Emberyo Website";
     }
   })();
+
+  function toggleDyslexia() {
+    document.body.classList.toggle("dyslexic");
+  }
   </script>
 </body>
 </html>
