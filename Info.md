@@ -6,8 +6,13 @@ i hate Microsoft, windows (even windows in houses), google, ads and YouTube (all
 
 # Links / Profiles
 Keyoxide: https://keyoxide.org/aspe:keyoxide.org:CGG6M6ZU3AVNSAK5HZO5LPGIEE
+
 Mastodon (on my Keyoxide): @emberyo@mastodon.social
+
 git.gay (on my Keyoxide): https://git.gay/Emberyo
+
 Matrix (on my Keyoxide): https://matrix.to/#/@emberyo:matrix.org
+
 XMPP (in progress 💠): 
+
 GitHub (on my Keyoxide): https://github.com/Emberyo
