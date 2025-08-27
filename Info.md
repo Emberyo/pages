@@ -1,7 +1,10 @@
 # Introduction
 Hi i'm Ember Yuuki Ortiz (or emberyo for short)
+
 i'm currently learning Japanese (maybe coding if i get around to it)
+
 i like games, free stuff, freedom and open source software 
+
 i hate Microsoft, windows (even windows in houses), google, ads and YouTube (all my favourite creators are on there so i'm fucked)
 
 # Links / Profiles
