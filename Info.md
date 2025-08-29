@@ -16,6 +16,6 @@ git.gay (on my Keyoxide): https://git.gay/Emberyo
 
 Matrix (on my Keyoxide): https://matrix.to/#/@emberyo:matrix.org
 
-XMPP (in progress 💠): 
+XMPP (: 
 
 GitHub (on my Keyoxide): https://github.com/Emberyo

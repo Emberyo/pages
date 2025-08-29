@@ -1,0 +1,1 @@
+gemmy wont do anything other than look around at the bottom right of my obsidian where me not having sync yet is the only notable thing there
