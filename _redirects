@@ -1,2 +1,4 @@
 /*.md   /:splat.md   200!
+/*.otf   /:splat.otf   200!
+/*.woff   /:splat.woff   200!
 /*      /api/render.html  200!

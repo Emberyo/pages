@@ -25,6 +25,7 @@
     }
 
     .dysbtn {
+      color: #000;
       position:absolute;
       text-decoration: none;
       display: inline-block;
@@ -43,10 +44,12 @@
     }
   </style>
   <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+  <link rel="stylesheet" href="https://use.hugeicons.com/font/icons.css">
 </head>
 <body>
+  <a rel="me" href="https://mastodon.social/@emberyo"></a>
   <md-block id="mdown"></md-block>
-  <a href="javascript:toggleDyslexia()" class="dysbtn"></a>
+  <a href="javascript:toggleDyslexia()" class="dysbtn"><i class="hgi hgi-stroke hgi-sharp hgi-monocle-01"></i></a>
   <script>
   (async () => {
     const path = window.location.pathname.slice(1) || "README";
@@ -79,7 +82,9 @@
   })();
 
   function toggleDyslexia() {
-    document.querySelector("#mdown").classList.toggle("dyslexic");
+    document.querySelectorAll("#mdown *").forEach((child) => {
+      child.classList.toggle("dyslexic");
+    });
   }
   </script>
 </body>
